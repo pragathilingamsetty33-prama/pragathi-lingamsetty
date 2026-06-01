@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-warm-off-white text-navy-800;
+  }
+}
+
+@layer utilities {
+  .print-hide {
+    @media print {
+      display: none !important;
+    }
+  }
+  
+  .print-show-url {
+    @media print {
+      display: inline !important;
+    }
+  }
+  
+  @media print {
+    @page {
+      margin: 0.5in;
+    }
+    
+    body {
+      @apply bg-white text-black;
+    }
+    
+    .no-print {
+      display: none !important;
+    }
+    
+    .shadow-card {
+      box-shadow: none !important;
+    }
+    
+    a {
+      @apply text-black underline;
+      color: black !important;
+    }
+    
+    button {
+      display: none !important;
+    }
+  }
+}
